@@ -11,16 +11,19 @@ const dashboardRoutes = require("./routes/dashboardRoutes");
 const app = express();
 
 //Middleware to handle CORS
-  app.use(
+   app.use(
   cors({
     origin: [
       "http://localhost:5173",
       "https://expense-tracker-beige-eta-83.vercel.app"
     ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
   })
 );
+
+ 
 
 app.use(express.json());
 
